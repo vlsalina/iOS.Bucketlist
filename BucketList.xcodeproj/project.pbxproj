@@ -13,6 +13,7 @@
 		610DCDCF28E27A3300B0A062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610DCDCE28E27A3300B0A062 /* Preview Assets.xcassets */; };
 		610DCDF028E4F33000B0A062 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DCDEF28E4F33000B0A062 /* Location.swift */; };
 		610DCDF228E4FA8300B0A062 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DCDF128E4FA8300B0A062 /* EditView.swift */; };
+		610DCDF428E50D2200B0A062 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DCDF328E50D2200B0A062 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		610DCDCE28E27A3300B0A062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		610DCDEF28E4F33000B0A062 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		610DCDF128E4FA8300B0A062 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		610DCDF328E50D2200B0A062 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				610DCDCD28E27A3300B0A062 /* Preview Content */,
 				610DCDEF28E4F33000B0A062 /* Location.swift */,
 				610DCDF128E4FA8300B0A062 /* EditView.swift */,
+				610DCDF328E50D2200B0A062 /* Result.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				610DCDCA28E27A3100B0A062 /* ContentView.swift in Sources */,
+				610DCDF428E50D2200B0A062 /* Result.swift in Sources */,
 				610DCDF028E4F33000B0A062 /* Location.swift in Sources */,
 				610DCDF228E4FA8300B0A062 /* EditView.swift in Sources */,
 				610DCDC828E27A3100B0A062 /* BucketListApp.swift in Sources */,
