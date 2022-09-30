@@ -10,7 +10,11 @@ import MapKit
 import LocalAuthentication
 
 extension ContentView {
-    @MainActor class ViewModel: ObservableObject {
+    enum authenticationErrors: Error {
+        case bAuthFailed
+    }
+    
+    class ViewModel: ObservableObject {
         @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
         @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
@@ -36,9 +40,10 @@ extension ContentView {
             }
         }
         
-        func authenticate() {
+        func authenticate() -> Bool {
             let context = LAContext()
             var error: NSError?
+            var status = false
             
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
                 let reason = "Please authenticate yourself to unlock your places."
@@ -48,13 +53,18 @@ extension ContentView {
                         Task { @MainActor in
                             self.isUnlocked = true
                         }
+                        status = false
                     } else {
                         // error
+                        status = true
                     }
                 }
             } else {
                 // no biometrics
+                status = true
             }
+            
+            return status
         }
         
         func addLocation() {

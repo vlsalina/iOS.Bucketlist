@@ -10,6 +10,7 @@ import MapKit
 
 struct ContentView: View {
     @StateObject private var viewModel = ViewModel()
+    @State private var showAlert = false
     
     var body: some View {
         if viewModel.isUnlocked {
@@ -63,12 +64,15 @@ struct ContentView: View {
             }
         } else {
             Button("Unlock Places") {
-                viewModel.authenticate()
+                showAlert = viewModel.authenticate()
             }
             .padding()
             .background(.blue)
             .foregroundColor(.white)
             .clipShape(Capsule())
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Important message"), message: Text("Biometric Authentication Failed"), dismissButton: .default(Text("Confirm")))
+            }
         }
     }
 }
